@@ -1,0 +1,22 @@
+CC=clang
+CFLAGS=-fPIC -g -O2
+LDFLAGS=-shared
+
+BUILD=build
+
+all: $(BUILD)/libops.so
+
+$(BUILD):
+	mkdir -p $(BUILD)
+
+$(BUILD)/ops.o: ops.s | $(BUILD)
+	$(CC) $(CFLAGS) -c ops.s -o $@
+
+$(BUILD)/bridge.o: bridge.c | $(BUILD)
+	$(CC) $(CFLAGS) -c bridge.c -o $@
+
+$(BUILD)/libops.so: $(BUILD)/ops.o $(BUILD)/bridge.o
+	$(CC) $(LDFLAGS) -o $@ $^
+
+clean:
+	rm -rf $(BUILD)
