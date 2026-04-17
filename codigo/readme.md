@@ -1,10 +1,17 @@
-Seccion de programas depositados
+# Proyecto ARM64 Assembly
 
+## Descripción
+Librería de alto rendimiento en ARM64 usando Assembly, integrada con C y Python mediante ctypes.
 
-_italic text_
-<!---
-  Notará que el nombre del programa y el readme son el mismo, solo varia la extensión, es con el fin de documentarlos
-  Las pantallas o diagramas iniciarian igual con el mismo nombre dando un GUION "-1,-2,..." por la secuencia .jpg
-  
---->
-***  bold text**
+## Funcionalidades
+- Suma
+- Resta
+- Multiplicación
+- Máximo y mínimo
+- Suma de arreglo
+
+## Compilación y ejecución
+
+```bash
+make
+python app.py
